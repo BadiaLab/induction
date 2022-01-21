@@ -22,6 +22,10 @@
  3. Gentle introduction to FEM Lecture notes [here](https://team-pancho.github.io/documents/anIntro2FEM_2015.pdf). Chapters 1-5.
  4. Claes Johnson book on Finite Elements. [here](https://www.booktopia.com.au/numerical-solution-of-partial-differential-equations-by-the-finite-element-method-claes-johnson/book/9780486469003.html?source=pla&gclid=CjwKCAiA78aNBhAlEiwA7B76pyECVNAow3Euugh0nZIWJ1C3O-n8rQAhK3GrEWuYJkErXaPqSvaMdhoCH1sQAvD_BwE)
 
+# Handling of references 
+
+Use the code available at the following repository: https://github.com/BadiaLab/BibHandler.jl
+
 # HPC cluster (Monarch) for medium computational demands
 
 (only when you need it)
