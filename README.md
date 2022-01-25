@@ -30,5 +30,5 @@ Use the code available at the following repository: https://github.com/BadiaLab/
 
 (only when you need it)
 
-1. Apply for an account. How? Write an e-mail either to `alberto.martin@monash.edu` or `santiago.badia@monash.edu`
+1. Apply for an account. How? Follow the instructions [here](https://docs.monarch.erc.monash.edu/MonARCH/requesting-an-account.html). In step number 3., you have to join the `pMona0083` project.
 2. Follow the instructions [here](https://github.com/gridap/GridapDistributed.jl/wiki/Monarch-(Monash)-Useful-links,-commands,-and-workflows)
