@@ -33,3 +33,7 @@ Use the code available at the following repository: https://github.com/BadiaLab/
 
 1. Apply for an account. How? Follow the instructions [here](https://docs.monarch.erc.monash.edu/MonARCH/requesting-an-account.html). In step number 3., you have to join the `pMona0083` project.
 2. Follow the instructions [here](https://github.com/gridap/GridapDistributed.jl/wiki/Monarch-(Monash)-Useful-links,-commands,-and-workflows)
+
+# Writing technical documents (articles)
+
+We have a LaTeX template [here](https://github.com/BadiaLab/induction/blob/main/assets/report.tex) that you can use to write your articles/reports.
