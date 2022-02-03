@@ -21,6 +21,7 @@
  2. Santi's Lecture notes on Finite Element methods. MTH-4321, MTH-5321
  3. Gentle introduction to FEM Lecture notes [here](https://team-pancho.github.io/documents/anIntro2FEM_2015.pdf). Chapters 1-5.
  4. Claes Johnson book on Finite Elements. [here](https://www.booktopia.com.au/numerical-solution-of-partial-differential-equations-by-the-finite-element-method-claes-johnson/book/9780486469003.html?source=pla&gclid=CjwKCAiA78aNBhAlEiwA7B76pyECVNAow3Euugh0nZIWJ1C3O-n8rQAhK3GrEWuYJkErXaPqSvaMdhoCH1sQAvD_BwE)
+ 5. Imperial College FEM course. Available [here](https://finite-element.github.io/)
 
 # Automated handling of bibliographics references 
 
