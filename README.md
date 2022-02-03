@@ -23,6 +23,11 @@
  4. Claes Johnson book on Finite Elements. [here](https://www.booktopia.com.au/numerical-solution-of-partial-differential-equations-by-the-finite-element-method-claes-johnson/book/9780486469003.html?source=pla&gclid=CjwKCAiA78aNBhAlEiwA7B76pyECVNAow3Euugh0nZIWJ1C3O-n8rQAhK3GrEWuYJkErXaPqSvaMdhoCH1sQAvD_BwE)
  5. Imperial College FEM course. Available [here](https://finite-element.github.io/)
 
+# Latex editing
+
+* A Latex template for reports/articles that uses the `biblatex` package, to be compiled with `lualatex`+`biber`, is available [here](https://github.com/BadiaLab/induction/blob/main/assets/report.tex)
+* We highly recommend to use VSCode with the [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension to edit tex source files.
+
 # Automated handling of bibliographics references 
 
 Use the code available at the following repository: https://github.com/BadiaLab/BibHandler.jl
