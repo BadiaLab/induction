@@ -2,7 +2,7 @@
 
 # Initial steps
  1. Sign-in to [Github](https://github.com/) (i.e., create an account)
- 2. Ask for invitation to [BadiaLab](https://github.com/BadiaLab) Github organization. How? Write an e-mail either to `alberto.martin@monash.edu` or `santiago.badia@monash.edu`
+ 2. Ask for invitation to [BadiaLab](https://github.com/BadiaLab) Github organization. How? Write an e-mail either to `alberto.martin@monash.edu` or `santiago.badia@monash.edu` with your Github user.
  3. Generate a pair of ssh keys on your local computer, and install the public key in Github. See instructions [here](https://www.inmotionhosting.com/support/server/ssh/how-to-add-ssh-keys-to-your-github-account/) for more details.
 
 # Coding 
