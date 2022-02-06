@@ -13,6 +13,17 @@
 4. Introduction to Julia programming language [here](https://juliaacademy.com/p/intro-to-julia) . Free course, although you have to register before. Also it is a good resource the Julia documentation, but highly advanced! [here](https://docs.julialang.org/en/v1/)
 5. Set up a development workflow (coding, testing, debugging, etc.) for Julia using Visual Studio Code. [here](https://github.com/gridap/Gridap.jl/wiki/Visual-Studio-Code-as-Julia-IDE). **VERY IMPORTANT**: Install `Revise.jl` Julia package early so that you can re-compile code dynamically while developing, without the need to close and re-open the Julia REPL. See [here](https://pkgdocs.julialang.org/v1/) for instructions needed for installing packages.
 
+# Updating Julia
+
+The script [jill.py](https://github.com/johnnychen94/jill.py) can help in automatically updating Julia by a single line of command on the terminal. The only thing we need to do after installing the `jill.py` package is to check the version of Julia we would like to install from the Julia Downloads section [here](https://julialang.org/downloads/) (usually either the LTS release or the current stable release.), and then run (taking the example of version `1.6.5` of Julia)
+
+```shell
+$ jill install 1.6.5
+```
+At the the time of writing, the other commands mentioned on the `jill.py` GitHub page (especially `$ jill install`, `$ jill install 1.6` (need a specific version like `1.6.5`, liked command above which works!)) don't work. 
+
+The script keeps the earlier versions of Julia present on the machine. 
+
 # Gridap.jl 
 
 1. [Start learning Gridap](https://github.com/gridap/Gridap.jl/wiki/Start-learning-Gridap)
