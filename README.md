@@ -15,12 +15,12 @@
 
 # Updating Julia
 
-The script [jill.py](https://github.com/johnnychen94/jill.py) can help in automatically updating Julia by a single line of command on the terminal. The only thing we need to do after installing the `jill.py` package is to check the version of Julia we would like to install from the Julia Downloads section [here](https://julialang.org/downloads/) (usually either the LTS release or the current stable release.), and then run (taking the example of version `1.6.5` of Julia)
+The script `jill.py` available on their GitHub repos [here](https://github.com/johnnychen94/jill.py) can help in automatically updating Julia by a single line of command on the terminal. The only thing we need to do after installing the `jill.py` package (using the instructions given on the `jill.py` GitHub page) is to check the version of Julia we would like to install from the Julia Downloads section [here](https://julialang.org/downloads/) (usually either the LTS release or the current stable release.), and then run (taking the example of version `1.6.5` of Julia)
 
 ```shell
 $ jill install 1.6.5
 ```
-At the the time of writing, the other commands mentioned on the `jill.py` GitHub page (especially `$ jill install`, `$ jill install 1.6` (need a specific version like `1.6.5`, liked command above which works!)) don't work. 
+At the the time of writing, the other commands mentioned on the `jill.py` GitHub page (especially `$ jill install`, `$ jill install 1.6` (need a specific version like `1.6.5`, like the command above which works!)) don't work. 
 
 The script keeps the earlier versions of Julia present on the machine. 
 
