@@ -1,0 +1,7 @@
+#!/bin/bash
+FN=$1
+lualatex $FN.tex
+biber $FN.aux
+lualatex $FN.tex
+lualatex $FN.tex
+rm -rf *.aux *.log *.fls *xmk *.log *.out *.fls *.synctex.gz *.bak *.blg *.bcf *.run.xml
