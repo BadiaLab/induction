@@ -53,3 +53,9 @@ Use the code available at the following repository: https://github.com/BadiaLab/
 * We have a LaTeX template [here](assets/latex-template/report.tex) that you can use to write your articles/reports. The template  uses the `biblatex` package, and is to be compiled with `lualatex`+`biber`, 
 * We highly recommend to use VSCode with the [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension to edit tex source files.
 * We **strongly** encourage you to keep some research diary or notes about meetings, discussions, etc. LaTeX is probably too much for these purposes. One nice solution is to write the notes in markdown using `Markdown+Math` package in `VSCode` for math.
+
+# Scientific project management
+
+1. We recommend [DrWatson.jl](https://juliadynamics.github.io/DrWatson.jl/stable/) for systematically managing the numerical simulations, storing and sharing the results, etc. Please refer to [DrWatson work flow tutorial](https://juliadynamics.github.io/DrWatson.jl/stable/workflow/#DrWatson-Workflow-Tutorial-1) as a crash course and [this Gridap tutorial](https://gridap.github.io/Tutorials/stable/pages/t014_validation_DrWatson/#Tutorial-14:-On-using-DrWatson.jl-1) as an introduction to using DrWatson in Gridap. 
+2. [Pluto.jl](https://github.com/fonsp/Pluto.jl) is an interactive tool for exploring, analysing, and explaining simulation results. Please refer to a [Pluto example](scripts/pluto-example) for Stokes equation provided by Eric Neiva and Francesc Verdugo. 
+3. [Makie.jl](https://github.com/JuliaPlots/Makie.jl) is a data visualization ecosystem with high performance and extensibility. Eric Neiva has provided a [script](scripts/makie_example.jl) to generate interactive plots for the purpose of comparing modal basis and Lagrangian bases using Makie.jl.
