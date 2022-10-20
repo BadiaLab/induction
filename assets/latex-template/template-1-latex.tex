@@ -1,0 +1,190 @@
+% To be compiled with pdflatex
+\documentclass[oneside, reqno, 11pt, a4paper]{amsart}
+
+%%%%%%%%%%%
+%% Fonts %%
+%%%%%%%%%%%
+\usepackage{microtype}
+% \usepackage{sfmath}
+\usepackage{mathpazo}
+\AtBeginDocument{
+  \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+  \DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+}
+\newcommand{\uu}{\char`_}
+
+%%%%%%%%%%%%%%
+%% Graphics %%
+%%%%%%%%%%%%%%
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{subfig}
+\usepackage{svg}
+
+%%%%%%%%%%%%
+%% Layout %%
+%%%%%%%%%%%%
+\usepackage[a4paper, pdftex, left=2cm, top=2cm, right=2cm, bottom=2cm]{geometry}
+\usepackage[final]{pdfpages}
+\usepackage{changepage}
+\newcommand{\br}{\vskip 1em}
+\usepackage[foot]{amsaddr}
+
+%%%%%%%%%%%
+%% Links %%
+%%%%%%%%%%%
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    bookmarksopen=true,
+    pdftitle={Linearised and regularised PINNs: reconciling smooth optimisation and low generalisation error bounds}, % Change here
+    pdfauthor={Santiago Badia, Alexandre Magueresse}, % Change here
+    pdfsubject={partial differential equations, neural networks, numerical integration}, % Change here
+    pdfkeywords={linearisation, regularisation, adaptive quadrature}, % Change here
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    filecolor=black,
+    urlcolor=blue
+}
+\newcommand{\fig}[1]{Fig.~\ref{#1}}
+\newcommand{\tab}[1]{Tab.~\ref{#1}}
+\newcommand{\sect}[1]{Sect.~\ref{#1}}
+\newcommand{\app}[1]{Apdx.~\ref{#1}}
+
+%%%%%%%%%%%%%%%%%%
+%% Bibliography %%
+%%%%%%%%%%%%%%%%%%
+\usepackage{csquotes}
+\usepackage[backend=biber, defernumbers=true, maxbibnames=5, style=numeric-comp, isbn=false, bibencoding=utf8, safeinputenc, url=false, doi=true, giveninits=true]{biblatex}
+
+%%%%%%%%%%%%%%%%%%
+%% Environments %%
+%%%%%%%%%%%%%%%%%%
+\usepackage{float}
+\usepackage{framed}
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\makeatletter
+\algdef{S}[IF]{IfNoThen}[1]{\algorithmicif\ #1}
+\makeatother
+\usepackage[inline]{enumitem}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+%%%%%%%%%%%%%%%%%
+%% Mathematics %%
+%%%%%%%%%%%%%%%%%
+\usepackage{amsmath, amsfonts, amssymb, amscd}
+\usepackage{mathtools}
+\usepackage[only, llbracket, rrbracket]{stmaryrd}
+
+% Variants
+\let\epsilon\varepsilon
+\let\phi\varphi
+
+% Jump in DG
+\newcommand{\tnor}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
+\right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+
+% Sets
+% \newcommand{\NN}{\mathbb{N}}
+% \newcommand{\RR}{\mathbb{R}}
+
+% \newcommand{\oo}[2]{\left]#1, #2\right[}
+% \newcommand{\oc}[2]{\left]#1, #2\right]}
+% \newcommand{\cc}[2]{\left[#1, #2\right]}
+% \newcommand{\co}[2]{\left[#1, #2\right[}
+% \newcommand{\ccn}[2]{\llbracket#1, #2\rrbracket}
+% \newcommand{\card}[1]{\left\vert #1 \right\vert}
+
+% Integration
+% \newcommand{\D}{\,\text{d}}
+% \newcommand{\abs}[1]{\left| #1 \right|}
+% \newcommand{\aabs}[1]{\left\| #1 \right\|}
+% \newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
+% \newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+% \newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+% Useful functions
+% \DeclareMathOperator*{\argmin}{\arg\min}
+% \DeclareMathOperator*{\argmax}{\arg\max}
+% \DeclareMathOperator{\Id}{Id}
+% \newcommand{\bool}[1]{\mathbf{1}_{#1}}
+
+% Comments
+\newcommand{\amcom}[1]{{\color{ProcessBlue}\bf $\blacktriangleright$ AM: #1 $\blacktriangleleft$}}
+\newcommand{\sbcom}[1]{{\color{RedOrange}\bf $\blacktriangleright$ SB: #1 $\blacktriangleleft$}}
+
+
+%%%%%%%%%%%%%%
+%% Acronyms %%
+%%%%%%%%%%%%%%
+\usepackage{acronym}
+% Examples of acronyms
+%\acrodef{pde}[PDE]{partial differential equation}
+%\acrodef{fe}[FE]{finite element}
+%\acrodef{fem}[FEM]{finite element method}
+%\acrodef{dof}[DOF]{degree of freedom}
+%\acrodefplural{dof}[DOFs]{degrees of freedom}
+%\acrodef{agfe}[agFE]{aggregated finite element}
+%\acrodef{agfem}[AgFEM]{aggregated finite element method}
+%\acrodef{cg}[CG]{continuous Galerkin}
+%\acrodef{dg}[DG]{discontinuous Galerkin}
+
+%%%%%%%%%%%%%%%%%%
+%% Figures path %%
+%%%%%%%%%%%%%%%%%%
+\graphicspath{}
+
+%%%%%%%%%%%%%%
+%% Metadata %%
+%%%%%%%%%%%%%%
+\title[Short title]{Long title}
+\date{\today}
+\keywords{partial differential equation, neural network, numerical integration}
+
+\author[A. One]{Author One$^\dagger$}
+\address{$^\dagger$School of mathematics\\Monash university\\Clayton\\Victoria 3800\\Australia}
+% $^{2}$ Centre Internacional de M\`etodes Num\`erics a l'Enginyeria, Esteve Terrades 5, E-08860 Castelldefels, Spain.\
+\email{author.one@monash.edu}
+\author[A. Two]{Author Two$^{\dagger\ast}$}
+\email{author.two@monash.edu}
+\thanks{$^\ast$Corresponding author}
+
+\addbibresource{references.bib}
+
+\begin{document}
+
+\begin{abstract}
+  % \input{src/0.abstract}
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+\label{Sec:introduction}
+% \input{src/1.introduction}
+% \section*{Acknowledgments}
+
+Here your text and your references \cite{2106.13728,2102.11802,10.21105_joss.02520,10.1016_0021-9991_80_90005-4}.
+
+\printbibliography
+
+% # To create the bib, you will have to work a little bit
+% # In your package / Julia env
+% (@v1.8) pkg>  git@github.com:BadiaLab/BibHandler.jl.git
+% # Run BibHandler with 
+% julia> using BibHandler
+% julia> file2bib("assets/latex-template/sample.md")
+
+% \appendix
+
+\end{document}

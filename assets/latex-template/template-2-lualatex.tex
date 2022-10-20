@@ -1,3 +1,4 @@
+% To be compiled with lualatex
 \documentclass[oneside,reqno,12pt,a4paper]{amsart}
 \usepackage[T1]{fontenc}
 \usepackage[margin=2.5cm]{geometry}
@@ -93,23 +94,36 @@ urlcolor=blue           % color of external links
 % comments
 \newcommand{\sbcom}[1]{{\color{red}{***{SB: #1}***}}}
 
+\addbibresource{references.bib}
+
 \begin{document}
 
 % Title
-\title[PDEs and ML]{Partial differential equations and machine learning}
-\author[S. Badia]{Santiago Badia$^{1,2,*}$}
+\title[Short title]{Long title}
+% \date{\today}
+
+\author[A. One]{Author One$^\dagger$}
 \thanks{\null\
 $^{1}$ School of Mathematics, Monash University, Clayton, Victoria, 3800, Australia.\
 $^{2}$ Centre Internacional de M\`etodes Num\`erics a l'Enginyeria, Esteve Terrades 5, E-08860 Castelldefels, Spain.\
 $^*$ Corresponding author.\
-E-mails: {\tt santiago.badia@monash.edu} (SB) 
+E-mails: {\tt author.one@monash.edu} (AO) 
 }
 \date{\today}
+% \maketitle
+
+\begin{abstract}
+  % \input{src/0.abstract}
+\end{abstract}
+
 \maketitle
+ 
+\section{Introduction}
+\label{Sec:introduction}
+% \input{src/1.introduction}
+% \section*{Acknowledgments}
 
-
-%\section{Activation functions suitable for PDE discretisation}\label{sec:}
-%
+Here your text and your references \cite{2106.13728,2102.11802,10.21105_joss.02520,10.1016_0021-9991_80_90005-4}.
 
 \printbibliography
 

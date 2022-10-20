@@ -5,5 +5,5 @@ In order to compile latex documents we suggest to use:
 
 which are the modern counterparts of pdflatex and bibtex.
 
-We have included an script that performs the compilation in ltx.
+We have included a script that performs the compilation in ltx.
 
