@@ -51,7 +51,7 @@ Use the code available at the following repository: https://github.com/BadiaLab/
 
 # Writing technical documents (articles)
 
-* We have a LaTeX template [here](assets/latex-template/report.tex) that you can use to write your articles/reports. The template  uses the `biblatex` package, and is to be compiled with `lualatex`+`biber`, 
+* We have a LaTeX template [here](https://github.com/BadiaLab/induction/tree/main/assets/latex-template) that you can use to write your articles/reports. The template  uses the `biblatex` package, and is to be compiled with `lualatex`+`biber`, 
 * We highly recommend to use VSCode with the [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension to edit tex source files.
 * We **strongly** encourage you to keep some research diary or notes about meetings, discussions, etc. LaTeX is probably too much for these purposes. One nice solution is to write the notes in markdown using `Markdown+Math` package in `VSCode` for math.
 
