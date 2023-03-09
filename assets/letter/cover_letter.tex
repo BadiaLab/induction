@@ -1,0 +1,149 @@
+% \pdfminorversion=4
+\documentclass[a4paper,11pt,twoside]{article}
+\usepackage[top=8mm,bottom=12mm,left=20mm,right=20mm, includehead, includefoot]{geometry}
+\usepackage{pdflscape}
+%\usepackage{lscape}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{times}
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[yyyymmdd]{datetime}
+
+\usepackage{hyperref}
+\usepackage{amsmath,amsfonts,amssymb,amscd,amsthm}
+
+\usepackage[makeroom]{cancel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[numbers]{natbib}
+\usepackage{color}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{doi}
+\usepackage{graphicx}
+\usepackage{booktabs}
+%\usepackage{glossaries}
+%\usepackage{times}
+\usepackage{multicol}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage[labelfont={bf,small},font=small]{caption}
+%
+\usepackage[vlined]{algorithm2e}
+%\SetKw{KwRet}{return}
+\SetKwProg{Fn}{Procedure}{}{end}
+%
+%\RestyleAlgo{boxed}
+\SetAlCapSkip{0.5em}
+\newcommand{\SetSmall}[1]{{\small #1 }}
+%\newcommand{\AlCapFnt}{small}
+\SetAlgoCaptionLayout{SetSmall}
+
+\usepackage{lastpage}
+
+\usepackage{sectsty}
+\sectionfont{\normalsize\selectfont}
+\subsectionfont{\normalsize\selectfont}
+\subsubsectionfont{\normalsize\selectfont}
+\paragraphfont{\em\normalsize\selectfont}
+\usepackage[compact]{titlesec}
+
+\usepackage{enumitem}
+
+%\usepackage{tikz}
+
+\newcommand{\mytitle}{Cover letter}
+
+\hypersetup{
+    bookmarks=true,
+    breaklinks=true,
+    bookmarksopen=true,
+    pdftitle={\mytitle},    % title
+    pdfauthor={Santiago Badia}, % author
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=black,        % color of internal links
+    citecolor=black,        % color of links to bibliography
+    filecolor=black,        % color of file links
+    urlcolor=black          % color of external links
+}
+
+\setlength{\parindent}{0pt}
+
+\usepackage{autonum}
+
+\usepackage{fancyhdr}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[C]{\color{gray} Page \thepage ~of {\color{gray}\pageref*{sec:endpage}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\tabcolsep}{0pt}
+\newlength{\colA}
+\newlength{\colB}
+\newlength{\colC}
+\newlength{\colS}
+
+\newcommand{\todo}{\color{red}}
+
+\begin{document}
+\pagestyle{fancy}
+
+\begin{flushleft}
+    Santiago Badia -- \texttt{santiago.badia@monash.edu} \\
+    School of Mathematics -- Monash University \\
+    Address: 9 Rainforest Walk, Clayton, Victoria 3800 (Australia) \\
+\end{flushleft}
+
+\begin{flushright}
+    \includegraphics[height=2.0cm]{monash-logo.png}
+\end{flushright}
+
+\begin{flushright}
+    Melbourne, 15th June 2021
+\end{flushright}
+
+\begin{flushleft}
+To the editorial board of the journal\\ Computer Methods in Applied Mechanics
+and Engineering
+\end{flushleft}
+
+Dear Editor:\\
+
+We hereby submit the manuscript entitled \emph{"Linking ghost penalty and aggregated unfitted methods"} to be
+considered for publication in Computer Methods in Applied Mechanics and
+Engineering. This is an original contribution that has not been published before
+and that is not currently under review at any other journal.\\
+
+In this paper, we explore, for the first time, the links between 
+the ghost penalty and aggregated unfitted finite element method (AgFEM). 
+Out of this analysis, we design a new set of unfitted finite element schemes
+that are ghost penalty methods (rely on a stabilisation term) but this penalty
+is defined in terms of a discrete extension operator, as in AgFEM.
+The resulting method converges to AgFEM as the penalty parameter increases and
+is free of a locking phenomenon of previous ghost penalty methods that is observed and explained in this work.\\
+
+We also perform for the first time a thorough comparison of ghost penalty and AgFEM methods for 
+different geometries, orders, dimensions, problems and boundary conditions. 
+We analyse condition number bounds, convergence rates and sensitivity of ghost penalty methods with respect
+to numerical parameters. The results obtained with the new methods are remarkable.
+They are free of the spurious locking observed in previous schemes and their accuracy is highly insensitive to numerical parameters.\\
+
+We expect this paper to provide better understanding and useful
+guidance for the application, design, and choice of unfitted finite element methods.\\
+
+Thank you for your valuable time and consideration. \\
+
+Yours faithfully,
+\vspace{0.6cm}
+% Optional
+% \begin{flushleft}
+% \includegraphics[scale=0.3]{signature.pdf}
+% \end{flushleft}
+\vskip0.6cm
+Santiago Badia
+
+\label{sec:endpage}
+\end{document}
