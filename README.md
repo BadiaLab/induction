@@ -61,3 +61,62 @@ Use the code available at the following repository: https://github.com/BadiaLab/
 2. [Pluto.jl](https://github.com/fonsp/Pluto.jl) is an interactive tool for exploring, analysing, and explaining simulation results. Please refer to a [Pluto example](scripts/pluto-example) for Stokes equation provided by Eric Neiva and Francesc Verdugo. 
 3. [Makie.jl](https://github.com/JuliaPlots/Makie.jl) is a data visualization ecosystem with high performance and extensibility. Eric Neiva has provided a [script](scripts/makie_example.jl) to generate interactive plots for the purpose of comparing modal basis and Lagrangian bases using Makie.jl.
 4. [AutoExperimentsProjectTemplate.jl](https://github.com/BadiaLab/AutoExperimentsProjectTemplate.jl) contains a Julia project template that illustrates an integrated workflow among DrWatson.jl and Pluto.jl. The idea is to adapt this template workflow to the particular needs of your own projects.   
+
+# Compiling ScaLAPACK on Gadi
+[ScaLAPACK](https://www.netlib.org/scalapack/) is a library of high-performance linear algebra routines for parallel distributed memory machines.
+On Gadi, ScaLAPACK is precompiled and included in Intel Math Kernel Library (intel-mkl) module, e.g., `/apps/intel-tools/intel-mkl/2025.0.1/lib/libmkl_scalapack_ilp64.so`. However, the library is not dynamically linked to its dependencies, such as `lapack` and `blas`.
+```cmd
+[wl0925@gadi-login-04 lib]$ ldd libmkl_scalapack_ilp64.so
+        statically linked
+```
+We can alternatively compile a new ScaLAPACK library from source code. The following steps are required on Gadi:
+1. Load the required modules on Gadi
+```cmd
+module purge
+module load intel-compiler-llvm/2025.0.4
+module load intel-mpi/2021.14.1
+module load intel-mkl/2025.0.1
+```
+
+2. Download and unzip the ScaLAPACK source code
+```cmd
+wget https://github.com/Reference-ScaLAPACK/scalapack/archive/v2.2.2.tar.gz
+
+tar -xvf v2.2.2.tar.gz
+```
+
+3. Compile ScaLAPACK
+```cmd
+cd scalapack-2.2.2
+
+cmake . -DBUILD_SHARED_LIBS=on
+```
+If we call `make` directly, we will get the following error:
+```cmd
+[wl0925@gadi-login-04 scalapack-2.2.2]$ make
+...
+
+[  1%] Building C object CMakeFiles/scalapack.dir/BLACS/SRC/igsum2d_.c.o
+scalapack-2.2.2/BLACS/SRC/igsum2d_.c:154:7: error: call to undeclared function 'BI_imvcopy'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  154 |       BI_imvcopy(Mpval(m), Mpval(n), A, tlda, bp->Buff);
+      |       ^
+...
+
+4 errors generated.
+...
+```
+This error is caused by the standard C compiler in intel-compiler-llvm module. We use an older version of the compiler by adding the flag `-std=c89` in the `CMakeCache.txt` file.
+```java
+//Flags used by the C compiler during all build types.
+CMAKE_C_FLAGS:STRING=-std=c89
+```
+4. Check the compiled files
+```cmd
+[wl0925@gadi-login-04 scalapack-2.2.2]$ ldd lib/libscalapack.so
+    linux-vdso.so.1 (0x00007fff2b7ba000)
+    libmkl_intel_lp64.so.2 => /apps/intel-tools/intel-mkl/2025.0.1/lib/libmkl_intel_lp64.so.2 (0x00007fe6e248c000)
+    ...
+    libgcc_s.so.1 => /lib64/libgcc_s.so.1 (0x00007fe6ceeba000)
+    /lib64/ld-linux-x86-64.so.2 (0x00007fe6e3bf0000)
+```
+Now `libscalapack.so` is dynmically linked to its dependencies and can be used in Julia.
